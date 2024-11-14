@@ -1,3 +1,21 @@
+CREATE TABLE Roles (
+  ROL_ID INT NOT NULL PRIMARY KEY,
+  NombreRol VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Usuarios (
+  USUARIO_ID INT NOT NULL PRIMARY KEY,
+  Nombre VARCHAR(50) NOT NULL,
+  Correo VARCHAR(50) NOT NULL UNIQUE,
+  Contraseña VARCHAR(20) NOT NULL,
+  Telefono VARCHAR(20),
+  Direccion VARCHAR(50),
+  ROL_ID INT NOT NULL,
+  FOREIGN KEY (ROL_ID) REFERENCES Roles(ROL_ID)
+);
+
+-------------------------------------------------------------
+
 CREATE TABLE CLIENTE(
   CL_ID INT NOT NULL PRIMARY KEY,
   Nombre VARCHAR(50) NOT NULL,
